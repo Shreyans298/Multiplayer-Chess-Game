@@ -1,18 +1,10 @@
 require("dotenv").config();
-<<<<<<< HEAD
-=======
-
->>>>>>> 62ab532269b9e1feca8474d62055b8b60614af87
 const http = require("http");
 const express = require("express");
 const handlebars = require("express-handlebars");
 const path = require("path");
 const socket = require("socket.io");
-<<<<<<< HEAD
 const myIo = require("./server/sockets/io");
-=======
-const myIo = require("./io");
->>>>>>> 62ab532269b9e1feca8474d62055b8b60614af87
 
 const app = express();
 const server = http.Server(app);
