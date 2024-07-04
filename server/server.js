@@ -4,8 +4,6 @@ const http = require("http"),
   handlebars = require("express-handlebars"),
   socket = require("socket.io");
 
-const config = require("../config");
-
 const myIo = require("./sockets/io"),
   routes = require("./routes/routes");
 
@@ -13,13 +11,11 @@ const app = express(),
   server = http.Server(app),
   io = socket(server);
 
-server.listen(config.port);
+server.listen(3000);
 
 games = {};
 
 myIo(io);
-
-console.log(`Server listening on port ${config.port}`);
 
 const Handlebars = handlebars.create({
   extname: ".html",

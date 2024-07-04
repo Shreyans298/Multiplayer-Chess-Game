@@ -10,10 +10,10 @@
         <div style="color: red" id="errorMessage"></div>
 
         <script>
-            $('#createGame').on('click', function() {
+            $('#createGame').on('click', () => {
                 window.location.replace('/white?code=' + $('#codeInput').val());
             });
-            $('#joinGame').on('click', function() {
+            $('#joinGame').on('click', () => {
                 window.location.replace('/black?code=' + $('#codeInput').val());
             });
 

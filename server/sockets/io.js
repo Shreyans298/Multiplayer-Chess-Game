@@ -1,18 +1,15 @@
 
-
 module.exports = io => {
     io.on('connection', socket => {
-        console.log('New socket connection');
 
         let currentCode = null;
 
-        socket.on('move', function(move) {
-            console.log('move detected')
+        socket.on('move', (move) => {
 
             io.to(currentCode).emit('newMove', move);
         });
         
-        socket.on('joinGame', function(data) {
+        socket.on('joinGame', (data) => {
 
             currentCode = data.code;
             socket.join(currentCode);
@@ -24,8 +21,7 @@ module.exports = io => {
             io.to(currentCode).emit('startGame');
         });
 
-        socket.on('disconnect', function() {
-            console.log('socket disconnected');
+        socket.on('disconnect', () => {
 
             if (currentCode) {
                 io.to(currentCode).emit('gameOverDisconnect');
