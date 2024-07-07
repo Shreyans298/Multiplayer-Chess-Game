@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
     <head>
         {{> head}}
     </head>
@@ -17,4 +17,54 @@
         <script src="/public/js/index.js"></script>
 
     </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    {{> head}}
+    <title>Chess Game</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        margin: 0;
+      }
+      #myBoard {
+        margin: 20px 0;
+        border: 2px solid #333;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      #status,
+      #pgn {
+        background-color: white;
+        padding: 10px;
+        width: 700px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myBoard" style="width: 700px"></div>
+    <label>PGN:</label>
+    <div id="pgn"></div>
+
+    <script>
+      let playerColor = "{{color}}";
+      console.log("Playing as " + playerColor);
+    </script>
+    <script src="/public/js/index.js"></script>
+  </body>
 </html>
