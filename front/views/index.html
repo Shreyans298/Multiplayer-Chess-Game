@@ -1,42 +1,14 @@
-<!-- <html>
-    <head>
-        {{> head}}
-    </head>
-    <body>
-        <h2>Game code</h2>
-        <input type="text" id="codeInput">
-        <button id="createGame">Create game</button>
-        <button id="joinGame">Join game</button>
-        <div style="color: red" id="errorMessage"></div>
-
-        <script>
-            $('#createGame').on('click', () => {
-                window.location.replace('/white?code=' + $('#codeInput').val());
-            });
-            $('#joinGame').on('click', () => {
-                window.location.replace('/black?code=' + $('#codeInput').val());
-            });
-
-            var urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('error') == 'invalidCode') {
-                $('#errorMessage').text('Invalid invite code');
-            }
-        </script>
-    </body>
-</html> -->
-
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Including jQuery from a CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Placeholder for additional head content -->
     {{> head}}
     <title>Game Page</title>
     <style>
       body {
         font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
+        background-color: #121212;
+        color: #e0e0e0;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -44,23 +16,25 @@
         margin: 0;
       }
       .container {
-        background: white;
+        background: #1e1e1e;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         text-align: center;
       }
       h2 {
         margin-bottom: 20px;
-        color: #333;
+        color: #e0e0e0;
       }
       input[type="text"] {
         padding: 10px;
         width: calc(100% - 22px);
         margin-bottom: 20px;
-        border: 1px solid #ccc;
+        border: 1px solid #555;
         border-radius: 5px;
         box-sizing: border-box;
+        background-color: #333;
+        color: #e0e0e0;
       }
       button {
         padding: 10px 20px;
@@ -78,7 +52,7 @@
         color: white;
       }
       #errorMessage {
-        color: red;
+        color: #ff6b6b;
         margin-top: 20px;
       }
     </style>
